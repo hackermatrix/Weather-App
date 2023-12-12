@@ -1,0 +1,93 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.canvas{
+  border: 2px solid ;
+  color: black;
+  border-radius: 10px;
+  width: 1100px;
+  height:   700px;
+  display: flexbox;
+}
+
+.card-body{
+display: flex;
+justify-content: center;
+height:70% ;
+margin-bottom: 0px;
+
+}
+.info-card{
+  border: 1px solid ;
+  width: 50%;
+  height: 100%;
+  
+}
+.nav{
+  margin: 2%;
+}
+.week-card{
+  width: 100%;
+  height: 11.5%;
+  border: 1px solid black;
+}
+.inner-week-card{
+  display: flex;
+  justify-content: space-around;
+}
+.inner-current-card{
+  border: 1px solid black;
+  height: 33%;
+}
+.air-condition-card{
+  display: flex;
+  flex-direction: column;
+}
+.today-forecast-card{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 17%;
+  height: 100%;
+}
