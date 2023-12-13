@@ -33,10 +33,10 @@ function WeeklyInfoCard () {
 
 
 let data = await getData();
-let weekdata = data.forecast.forecastday
-console.log(weekdata[0])
+let weekdata = data.forecast.forecastday;
 
 function WeekCard() {
+
   return (
     <>
       {weekdata.map((day)=>

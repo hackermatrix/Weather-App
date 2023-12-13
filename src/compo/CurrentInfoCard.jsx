@@ -15,14 +15,12 @@ const getHourData = async ()=>{
 }
 
 
-
-let data = await getData();
-let hourlyData = await getHourData();
-
 const times = [9,12,15,18,21];
-
+let data =  await getData();
+let hourlyData = await  getHourData();
 
 function CurrentInfoCard() {
+
   return (
     <div className='info-card'>
         <section className='inner-current-card'>
