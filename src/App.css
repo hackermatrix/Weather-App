@@ -42,41 +42,71 @@
 }
 
 .canvas{
-  border: 2px solid ;
-  color: black;
+  border: 3px solid ;
+  border-color: orangered;
+  background-color: white;
   border-radius: 10px;
   width: 1100px;
-  height:   700px;
+  /* height:   700px; */
   display: flexbox;
+  padding: 0px 25px;
 }
 
 .card-body{
 display: flex;
 justify-content: center;
 height:70% ;
-margin-bottom: 0px;
+
+margin-bottom: 50px;
 
 }
 .info-card{
-  border: 1px solid ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 50%;
   height: 100%;
+  padding-bottom: 1%;
   
 }
 .nav{
   margin: 2%;
 }
 .week-card{
-  width: 100%;
-  height: 11.5%;
-  border: 1px solid black;
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  height: 60px;
+  border: 2px solid orangered;
+  border-radius: 5px;
+  margin: 5px 0px;
+  padding: 1% 0%;
+  padding-top: 3%;
+  padding-bottom: 5%;
+  /* background-color: rgba(255, 68, 0, 0.375); */
+
+}
+.week-card:hover{
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  height: 60px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: rgba(255, 68, 0, 0.617);
+  border-color: black;
+  margin: 5px 0px;
+  padding: 1% 0%;
+  padding-top: 3%;
+  padding-bottom: 5%;
+
 }
 .inner-week-card{
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  flex-direction: column;
 }
 .inner-current-card{
-  border: 1px solid black;
   height: 33%;
 }
 .air-condition-card{
@@ -88,6 +118,7 @@ margin-bottom: 0px;
   flex-direction: column;
   border: 1px solid black;
   border-radius: 10px;
-  width: 17%;
+  width: 14%;
   height: 100%;
+  margin: 0px 6px;
 }
