@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../App.css'
 import axios from 'axios';
+
 
 const getData = async ()=>{
   const response = await axios.get("https://api.weatherapi.com/v1/forecast.json?q=Ahmednagar%2Cin&days=1&hour=5&key=5cadec3d7211419eb0c64922231312");
@@ -15,11 +16,26 @@ const getHourData = async ()=>{
 }
 
 
-const times = [9,12,15,18,21];
-let data =  await getData();
-let hourlyData = await  getHourData();
+
+
+
 
 function CurrentInfoCard() {
+  const [data,setData] = useState(null);
+  const [hourlyData,setHourlyData] = useState(null);
+  const times = [9,12,15,18,21];
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setData(await getData());
+      setHourlyData(await getHourData());
+    };
+
+    fetchData();
+  }, []);
+
+  
+  console.log(data);
 
   return (
     <div className='info-card'>

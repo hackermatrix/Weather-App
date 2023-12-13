@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../App.css'
 import axios from 'axios';
 
@@ -14,8 +14,16 @@ function getPrevDates(days){
 
 
 const getData = async ()=>{
+  try{
   const response = await axios.get(`https://api.weatherapi.com/v1/history.json?q=Ahmednagar%2Cin&dt=${getPrevDates(6)}&end_dt=${getPrevDates(1)}&key=5cadec3d7211419eb0c64922231312`);
   return response.data
+}
+  catch (error) {
+    console.log(error);
+    return error;
+  }
+  
+  
 }
 
 
@@ -32,10 +40,21 @@ function WeeklyInfoCard () {
 
 
 
-let data = await getData();
-let weekdata = data.forecast.forecastday;
+// let data = await getData();
+// let weekdata = data.forecast.forecastday;
 
 function WeekCard() {
+
+  const [data,setData] = useState(null);
+  useEffect(()=>{
+
+    const fetchData = async()=>{
+      setData(await getData());
+    }
+    fetchData();
+  },[]);
+
+  let weekdata = data.forecast.forecastday;
 
   return (
     <>
