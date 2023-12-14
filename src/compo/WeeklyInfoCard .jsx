@@ -45,6 +45,7 @@ function WeekCard() {
     <>
       {weekdata.map((day) => (
         <section key={day.date_epoch} className="week-card">
+          
           <section className="inner-week-card">
             <span>
               <strong>

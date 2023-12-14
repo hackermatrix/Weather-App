@@ -42,9 +42,8 @@
 }
 
 .canvas{
-  border: 3px solid ;
-  border-color: orangered;
-  background-color: white;
+  border: 2px solid ;
+  border-color: #FFB534;
   border-radius: 10px;
   width: 1100px;
   /* height:   700px; */
@@ -77,48 +76,43 @@ margin-bottom: 50px;
   justify-content: space-evenly;
   width: 90%;
   height: 60px;
-  border: 2px solid orangered;
+  border: 1.5px solid #F875AA;
   border-radius: 5px;
   margin: 5px 0px;
-  padding: 1% 0%;
-  padding-top: 3%;
-  padding-bottom: 5%;
+  padding-bottom: 15px;
+  padding-top: 7px;
   /* background-color: rgba(255, 68, 0, 0.375); */
 
 }
 .week-card:hover{
-  display: flex;
-  justify-content: space-evenly;
-  width: 90%;
-  height: 60px;
-  border: 2px solid white;
-  border-radius: 5px;
-  background-color: rgba(255, 68, 0, 0.617);
-  border-color: black;
-  margin: 5px 0px;
-  padding: 1% 0%;
-  padding-top: 3%;
-  padding-bottom: 5%;
+  background-color: #FFDFDF;
 
 }
 .inner-week-card{
   display: flex;
   /* justify-content: space-around; */
+
   flex-direction: column;
 }
 .inner-current-card{
+  gap:10px;
   height: 33%;
 }
 .air-condition-card{
   display: flex;
+  gap:15px;
   flex-direction: column;
 }
 .today-forecast-card{
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border: 1px solid #F875AA;
   border-radius: 10px;
   width: 14%;
   height: 100%;
   margin: 0px 6px;
+  padding: 10px 5px;
+}
+.today-forecast-card:hover{
+  background-color: #FFDFDF;
 }

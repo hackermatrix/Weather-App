@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import "../App.css";
 import axios from "axios";
 
-function CurrentInfoCard() {
+function CurrentInfoCard(props) {
+  console.log(props)
   const [data, setData] = useState(null);
   const [hourlyData, setHourlyData] = useState(null);
   const times = [9, 12, 15, 18, 21];
@@ -18,7 +19,7 @@ function CurrentInfoCard() {
 
   const getData = async () => {
     const response = await axios.get(
-      "https://api.weatherapi.com/v1/forecast.json?q=Ahmednagar%2Cin&days=1&hour=5&key=5cadec3d7211419eb0c64922231312"
+      `https://api.weatherapi.com/v1/forecast.json?q=${props.query}%2Cin&days=1&hour=5&key=5cadec3d7211419eb0c64922231312`
     );
     setData(response.data);
     console.log(response.data);
@@ -30,7 +31,7 @@ function CurrentInfoCard() {
       dateobj.getMonth() + 1
     }-${dateobj.getDate()}`;
     const response = await axios.get(
-      `https://api.weatherapi.com/v1/history.json?q=Ahmednagar%2Cin&dt=${apidate}&key=5cadec3d7211419eb0c64922231312`
+      `https://api.weatherapi.com/v1/history.json?q=${props.query}%2Cin&dt=${apidate}&key=5cadec3d7211419eb0c64922231312`
     );
     setHourlyData(response.data);
     console.log(response.data);
@@ -46,7 +47,7 @@ function CurrentInfoCard() {
             <section
               style={{ display: "flex", justifyContent: "space-around" }}
             >
-              <span style={{ display: "flex", flexDirection: "column" }}>
+              <span style={{ display: "flex", flexDirection: "column",gap:"15px" }}>
                 <span>
                   <strong>
                     {data.location.name},{data.location.country}
@@ -55,7 +56,7 @@ function CurrentInfoCard() {
                 <span>{data.location.localtime}</span>
               </span>
 
-              <span style={{ display: "flex", flexDirection: "column" }}>
+              <span style={{ display: "flex", flexDirection: "column",gap:"15px"  }}>
                 <span>
                   <strong>
                     {data.current.feelslike_c} <sup>o</sup>C
@@ -73,7 +74,7 @@ function CurrentInfoCard() {
             </section>
           </section>
 
-          <section className="inner-current-card">
+          <section style={{margin:'20px 0px'}}className="inner-current-card">
             <h3>Air Conditions</h3>
             <br />
             <section
